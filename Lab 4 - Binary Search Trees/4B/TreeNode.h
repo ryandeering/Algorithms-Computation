@@ -1,14 +1,14 @@
 #pragma once
 
 class TreeNode {
-  friend class BST;
+	friend class BST;
+	// public:
+	TreeNode();
+	TreeNode(int data);
+	~TreeNode();
 
- public:
-  TreeNode();
-  TreeNode(char data);
-
- private:
-  char data;
-  TreeNode* left;
-  TreeNode* right;
+private:
+	int data;
+	TreeNode* left;
+	TreeNode* right;
 };

@@ -1,23 +1,38 @@
 #pragma once
 #include "TreeNode.h"
+#include <string>
 class BST {
-  friend class TreeNode;
+	friend class TreeNode;
 
- public:
-  BST();
+public:
+	void pretty_print();
+	BST();
+	~BST();
+	void DestroyRecursive(TreeNode* node);
+	void add(int toadd);
+	int height();
+	void remove(int toremove);
+	bool hasPathSum(int sum);
+	void printPaths();
+	int minValue();
+	int maxValue();
+	int isBST();
+	int isBST2();
 
-  void add(char c);
-  bool search(char c);
-  void printinAscOrder();
-  void printPreOrder();
-  void printPostOrder();
-
- private:
-  void add(TreeNode* toAdd, TreeNode* addHere);
-  bool search(char c, TreeNode* node);
-  void AscOrder(TreeNode* node);
-  void PreOrder(TreeNode* node);
-  void PostOrder(TreeNode* node);
-
-  TreeNode* root;
+private:
+	int isBST(TreeNode* node);
+	int isBSTRecur(TreeNode* node, int min, int max);
+	void pretty_print(const TreeNode* node);
+	void pretty_print(std::string prefix, const TreeNode* node, bool isLeft);
+	int minValue(TreeNode* node);
+	int maxValue(TreeNode* node);
+	void printArray(int path[], int len);
+	void printPaths(TreeNode* node);
+	void printPathsRecur(TreeNode* n, int path[], int pathLen);
+	int hasPathSum(TreeNode* root, int sum);
+	void add(TreeNode* toAdd, TreeNode* addHere);
+	void remove(TreeNode* addHere, int toremove);
+	TreeNode* FindMin(TreeNode* node);
+	int height(TreeNode* node);
+	TreeNode* root;
 };

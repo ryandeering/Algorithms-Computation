@@ -1,5 +1,10 @@
 #include "TreeNode.h"
 
-TreeNode::TreeNode() {}  // Google styling!
+TreeNode::TreeNode() {}
 
-TreeNode::TreeNode(char dataIn) { data = dataIn; }
+TreeNode::TreeNode(int dataIn) { data = dataIn; }
+
+TreeNode::~TreeNode() {
+	delete left;
+	delete right;
+}
